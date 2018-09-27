@@ -5,6 +5,7 @@
             <!-- Main menu -->
             <li class="current"><a href="#"><i class="glyphicon glyphicon-home"></i>
                     Dashboard</a></li>
+            @can('isIndustry')
             <li class="submenu">
                 <a href="{{route('admin.index')}}">
                     <i class="glyphicon glyphicon-list"></i> Products
@@ -39,6 +40,8 @@
                     <li><a href="#">All Orders</a></li>
                 </ul>
             </li>
+            @endcan
+            @can('isAdmin')
             <li class="submenu">
                 <a href="#">
                     <i class="glyphicon glyphicon-list"></i> Manage Users
@@ -50,6 +53,7 @@
                     <li><a href="#">Approved Industries</a></li>
                 </ul>
             </li>
+              @endcan
         </ul>
     </div>
 </div> <!-- ADMIN SIDE NAV-->

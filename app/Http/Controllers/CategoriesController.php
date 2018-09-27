@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Gate;
 
 class CategoriesController extends Controller
 {
@@ -14,6 +15,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+        if(!Gate::allows('isIndustry')){
+            abort(404, "Sorry, You cant do this actions");
+        }
         $categories= Category::all();
         return view('admin.category.index',compact('categories'));
     }

@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Gate;
 
 class ProductsController extends Controller
 {
@@ -16,7 +17,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        if(!Gate::allows('isIndustry')){
+            abort(404, "Sorry, You cant do this actions");
+        }
         //index page for showing products
+
         $products = Product::all();
         return view('admin.index',compact('products'));
     }
