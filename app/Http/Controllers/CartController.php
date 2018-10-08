@@ -60,9 +60,14 @@ class CartController extends Controller
     public function edit($id)
     {
 
+
+    }
+
+    public function addItem($id){
         $product=Product::find($id);
         Cart::add($id,$product->name,1,$product->price,['size'=>'medium']);
         return back();
+
     }
 
     /**

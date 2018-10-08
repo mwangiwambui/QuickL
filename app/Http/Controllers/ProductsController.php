@@ -23,7 +23,7 @@ class ProductsController extends Controller
         //index page for showing products
 
         $products = Product::all();
-        return view('admin.index',compact('products'));
+        return view('admin.product.index',compact('products'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ProductsController extends Controller
             $formInput['image']= $imageName;
         }
         Product::create($formInput);
-        return redirect()->route('product.index');
+        return redirect()->route('product.create');
     }
 
     /**

@@ -22,12 +22,12 @@ Route::get('/about','FrontController@about')->name('about');
 Route::get('/faq','FrontController@faq')->name('faq');
 Route::get('/contact','FrontController@contact')->name('contact');
 Route::get('/404','FrontController@error')->name('error');
-Route::get('/logout', 'Auth\LoginController@logout')->name('home');
 
 Auth::routes();
-
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/cart', 'CartController');
+Route::get('/cart/add-item/{id}', 'CartController@addItem')->name('cart.addItem');
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/',function(){
         return view('admin.index');
@@ -35,3 +35,5 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::resource('product','ProductsController');
     Route::resource('category','CategoriesController');
 });
+Route::get('checkout','CheckoutController@step1');
+Route::get('shipping-info','CheckoutController@Shipping')->name('checkout.shipping');
