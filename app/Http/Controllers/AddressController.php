@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
-use Gate;
+use Illuminate\Support\Facades\Auth;
 
-class ProductsController extends Controller
+class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        if(!Gate::allows('isIndustry')){
-            abort(404, "Sorry, You cant do this actions");
-        }
-        //index page for showing products
-
-        $products = Product::all();
-        return view('admin.product.index',compact('products'));
+        //
     }
 
     /**
@@ -33,8 +24,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories= Category::pluck('name','id');
-        return view('admin.product.create',compact('categories'));
+        //
     }
 
     /**
@@ -45,23 +35,15 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $formInput= $request->except('image');
-        //validation
         $this->validate($request,[
-            'name'=>'required',
-            'size'=>'required',
-            'price'=>'required',
-            'image'=>'image|mimes:png,jpg,jpeg|max:10000'
+            'addressline'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'zip'=>'required|integer',
+            'phone'=>'required|integer',
         ]);
-        //image upload
-        $image=$request->image;
-        if($image){
-            $imageName= $image->getClientOriginalName();
-            $image->move('images',$imageName);
-            $formInput['image']= $imageName;
-        }
-        Product::create($formInput);
-        return redirect()->route('product.admin');
+        Auth::user()->address()->create($request->all());
+
     }
 
     /**
