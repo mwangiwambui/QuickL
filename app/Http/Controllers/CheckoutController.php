@@ -16,4 +16,20 @@ class CheckoutController extends Controller
     public function shipping(){
         return view('front.shipping.info');
     }
+
+    public function payment(){
+        return view('front.payment');
+    }
+
+    public function storePayment(Request $request){
+
+        // Set your secret key: remember to change this to your live secret key in production
+// See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey("sk_test_Eu8C7K0abKoeGjPC7qjxGHKa");
+
+
+        dd($request->all());
+
+    }
+
 }
