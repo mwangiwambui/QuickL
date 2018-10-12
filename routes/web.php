@@ -37,7 +37,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 });
 Route::resource('address','AddressController');
-Route::get('checkout','CheckoutController@step1');
-Route::get('shipping-info','CheckoutController@Shipping')->name('checkout.shipping');
+//Route::get('checkout','CheckoutController@step1');
+Route::get('shipping-info','CheckoutController@shipping')->name('checkout.shipping');
 Route::get('payment','CheckoutController@payment')->name('checkout.payment');
 Route::post('store-payment','CheckoutController@storePayment')->name('payment.store');
