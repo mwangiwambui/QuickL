@@ -4,9 +4,7 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@-ms-viewport {
-  width: device-width;
-}
+
 
 html {
   box-sizing: border-box;
@@ -999,10 +997,6 @@ html {
       justify-content: space-between !important;
 }
 
-.justify-content-around {
-  -ms-flex-pack: distribute !important;
-      justify-content: space-around !important;
-}
 
 .align-items-start {
   -ms-flex-align: start !important;
@@ -1135,7 +1129,7 @@ html {
         justify-content: space-between !important;
   }
   .justify-content-sm-around {
-    -ms-flex-pack: distribute !important;
+
         justify-content: space-around !important;
   }
   .align-items-sm-start {
@@ -1254,7 +1248,7 @@ html {
         justify-content: space-between !important;
   }
   .justify-content-md-around {
-    -ms-flex-pack: distribute !important;
+
         justify-content: space-around !important;
   }
   .align-items-md-start {
@@ -1373,7 +1367,7 @@ html {
         justify-content: space-between !important;
   }
   .justify-content-lg-around {
-    -ms-flex-pack: distribute !important;
+
         justify-content: space-around !important;
   }
   .align-items-lg-start {
@@ -1492,7 +1486,7 @@ html {
         justify-content: space-between !important;
   }
   .justify-content-xl-around {
-    -ms-flex-pack: distribute !important;
+
         justify-content: space-around !important;
   }
   .align-items-xl-start {

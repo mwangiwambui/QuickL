@@ -55,7 +55,7 @@
                     <a class="nav-link" href="{{url('/about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/home')}}">Services</a>
+                    <a class="nav-link" href="{{url('/items')}}">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/contact')}}">Contact</a>
@@ -65,7 +65,7 @@
                         <i class="far fa-user-circle" style="font-size: 25px;"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="#" style="font-size: 20px;"> Session Name</a>,<br>
+                        <a class="dropdown-item disabled"  style="font-size: 20px;"> Session Name</a>,<br>
                         <a class="dropdown-item" href="#"><i class="fas fa-wrench"></i> Edit Account</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>

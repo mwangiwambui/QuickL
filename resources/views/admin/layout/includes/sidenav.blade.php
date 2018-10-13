@@ -35,9 +35,9 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="#">Pending Orders</a></li>
-                    <li><a href="#">Delivered Orders</a></li>
-                    <li><a href="#">All Orders</a></li>
+                    <li><a href="{{url('admin/orders/pending')}}">Pending Orders</a></li>
+                    <li><a href="{{url('admin/orders/delivered')}}">Delivered Orders</a></li>
+                    <li><a href="{{url('admin/orders')}}">All Orders</a></li>
                 </ul>
             </li>
             @endcan
@@ -49,8 +49,9 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="#">Industry Request</a></li>
-                    <li><a href="#">Approved Industries</a></li>
+                    <li><a href="{{url('admin/requests/pending')}}">Pending Request</a></li>
+                    <li><a href="{{url('admin/requests/accepted')}}">Approved Industries</a></li>
+                    <li><a href="{{url('admin/requests')}}">All Industries</a></li>
                 </ul>
             </li>
               @endcan

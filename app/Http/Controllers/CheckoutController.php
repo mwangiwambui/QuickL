@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Stripe\Card;
+use Stripe\Order;
 
 class CheckoutController extends Controller
 {
@@ -42,6 +44,14 @@ class CheckoutController extends Controller
 
 
             ]);
+
+          //create the order
+        Order::createOrder();
+
+        return "Order completed";
+
+
+
 
 
 

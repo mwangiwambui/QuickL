@@ -61,9 +61,9 @@
                         </ul>
                     </div>
                 </div>
-
+            </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+
                         @forelse($items->chunk(4) as $chunk)
                             @foreach($chunk as $item)
                                 <div class="small-3 medium-3 large-3 columns">
@@ -94,12 +94,12 @@
                         @empty
                             <h3>No items</h3>
                         @endforelse
-                    </div>
+
 
 
                 </div>
 
-            </div>
+
         </section>
         <!-- Marketing Icons Section -->
         <h1 class="my-4">Welcome to Modern Business</h1>
