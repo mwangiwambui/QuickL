@@ -35,6 +35,7 @@ class CheckoutController extends Controller
 // Token is created using Checkout or Elements!
 // Get the payment token ID submitted by the form:
         $token = $request->stripeToken;
+        try{
 
             $charge = \Stripe\Charge::create([
                 'amount' => Cart::total()*100,
@@ -43,7 +44,9 @@ class CheckoutController extends Controller
                 'source' => $token,
 
 
-            ]);
+            ]);}catch (\Stripe\Error\Card $e){
+            //Cart has been declined
+        }
 
           //create the order
         Order::createOrder();

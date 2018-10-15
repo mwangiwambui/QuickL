@@ -61,7 +61,7 @@ class ProductsController extends Controller
             $formInput['image']= $imageName;
         }
         Product::create($formInput);
-        return redirect()->route('product.admin');
+        return redirect()->route('product.create');
     }
 
     /**

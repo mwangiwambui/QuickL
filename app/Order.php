@@ -8,15 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class Order extends Model
 {
-    protected $fillable=['total',delivered];
+    protected $fillable=['total','delivered'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 
     public function orderItems(){
         return $this->belongsToMany(Product::class)->withPivot('qty','total');
     }
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+
 
     public static function createOrder(){
 

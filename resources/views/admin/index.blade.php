@@ -1,10 +1,10 @@
 @extends('admin.layout.admin')
     @section('content')
-        @can(isIndustry)
+        @can('isIndustry')
         <h3>Industry</h3>
         @endcan
 
-        @can(isAdmin)
+        @can('isAdmin')
             <h3>Admin</h3>
         @endcan
 
