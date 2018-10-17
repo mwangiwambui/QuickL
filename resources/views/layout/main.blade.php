@@ -4,10 +4,9 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Colo Shop Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title','Quick Link')</title>
 
@@ -34,79 +33,238 @@
     <link href="{{asset('css/stingo.css')}}" rel="stylesheet">
     <link href="{{asset('css/style2.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/bootstrap4/bootstrap.min.css')}}">
+    <link href="{{asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet')}}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/main_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/responsive.css')}}">
+
 </head>
 
 <body>
 
+<div class="super_container">
+
 <!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+
+<header class="header trans_300">
+
+  <!-- Top Navigation -->
+
+  <div class="top_nav">
     <div class="container">
-        <div id="logo" class="pull-left">
-            <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <h1><a href="{{url('/')}}">Quick Link</a></h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="top_nav_left">free shipping on all u.s orders over $50</div>
         </div>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/about')}}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/items')}}">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/contact')}}">Contact</a>
-                </li>
-                <li class="nav-item dropdown" >
-                    <a class="nav-link " href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="far fa-user-circle" style="font-size: 25px;"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item disabled"  style="font-size: 20px;"> Session Name</a>,<br>
-                        <a class="dropdown-item" href="#"><i class="fas fa-wrench"></i> Edit Account</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </div>
-                </li>
+        <div class="col-md-6 text-right">
+          <div class="top_nav_right">
+            <ul class="top_nav_menu">
+
+              <!-- Currency / Language / My Account -->
+
+              <li class="currency">
+                <a href="#">
+                  usd
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="currency_selection">
+                  <li><a href="#">cad</a></li>
+                  <li><a href="#">aud</a></li>
+                  <li><a href="#">eur</a></li>
+                  <li><a href="#">gbp</a></li>
+                </ul>
+              </li>
+              <li class="language">
+                <a href="#">
+                  English
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="language_selection">
+                  <li><a href="#">French</a></li>
+                  <li><a href="#">Italian</a></li>
+                  <li><a href="#">German</a></li>
+                  <li><a href="#">Spanish</a></li>
+                </ul>
+              </li>
+              <li class="account">
+                <a href="#">
+                  My Account
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="account_selection">
+                  <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                  <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                </ul>
+              </li>
             </ul>
+          </div>
         </div>
+      </div>
     </div>
-</nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <form class="form-inline" style="margin-left: 190px; margin-top: 10px;">
-        <input class="form-control mr-sm-2" style="width : 500px; " type="search" placeholder="Search item ..." aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" style="margin-top: 10px;" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" style="margin-left: 60px; font-size : 20px;" href="#"><i class="far fa-bell" style="font-size: 25px; font-weight: 600;" id="symbols"></i><span class="badge badge-light">7</span> Notifications</a>
-            <a class="nav-item nav-link" style="margin-left: 10px; font-size : 20px;" href="{{route('cart.index')}}"><i class="fab fa-opencart" style="font-size: 25px; font-weight: 600;" id="symbols"></i><span class="badge badge-light">{{Cart::count()}}</span> My Cart</a>
+  </div>
+
+  <!-- Main Navigation -->
+
+  <div class="main_nav_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-right">
+          <div class="logo_container">
+            <a href="{{url('/')}}">Quick<span>Link</span></a>
+          </div>
+          <nav class="navbar">
+            <ul class="navbar_menu">
+              <li><a href="{{url('/')}}">home</a></li>
+              <li><a href="{{url('/items')}}">shop</a></li>
+              <li><a href="{{url('/contact')}}">contact</a></li>
+            </ul>
+            <ul class="navbar_user">
+              <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+              <li class="checkout">
+                <a href="{{route('cart.index')}}">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <span id="checkout_items" class="checkout_items">{{Cart::count()}}</span>
+                </a>
+              </li>
+            </ul>
+            <div class="hamburger_container">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+          </nav>
         </div>
+      </div>
     </div>
-</nav>
+  </div>
+
+</header>
+
+<div class="fs_menu_overlay"></div>
+<div class="hamburger_menu">
+  <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+  <div class="hamburger_menu_content text-right">
+    <ul class="menu_top_nav">
+      <li class="menu_item has-children">
+        <a href="#">
+          usd
+          <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="menu_selection">
+          <li><a href="#">cad</a></li>
+          <li><a href="#">aud</a></li>
+          <li><a href="#">eur</a></li>
+          <li><a href="#">gbp</a></li>
+        </ul>
+      </li>
+      <li class="menu_item has-children">
+        <a href="#">
+          English
+          <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="menu_selection">
+          <li><a href="#">French</a></li>
+          <li><a href="#">Italian</a></li>
+          <li><a href="#">German</a></li>
+          <li><a href="#">Spanish</a></li>
+        </ul>
+      </li>
+      <li class="menu_item has-children">
+        <a href="#">
+          My Account
+          <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="menu_selection">
+          <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+          <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+        </ul>
+      </li>
+      <li class="menu_item"><a href="#">home</a></li>
+      <li class="menu_item"><a href="#">shop</a></li>
+      <li class="menu_item"><a href="#">promotion</a></li>
+      <li class="menu_item"><a href="#">pages</a></li>
+      <li class="menu_item"><a href="#">blog</a></li>
+      <li class="menu_item"><a href="#">contact</a></li>
+    </ul>
+  </div>
+</div>
 
 
 @yield('content')
 
-<!-- Footer -->
-<footer class="py-5 bg-light">
-    <div class="container">
-        <p class="m-0 text-center text-black">Copyright &copy; Quick Link 2018</p>
+<!-- Newsletter -->
+
+<div class="newsletter">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
+          <h4>Newsletter</h4>
+          <p>Subscribe to our newsletter and get 20% off your first purchase</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <form action="post">
+          <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
+            <input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
+            <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <!-- /.container -->
+  </div>
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+          <ul class="footer_nav">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="footer_nav_container">
+          <div class="cr">©2018 All Rights Reserverd. This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('js/app.js')}}"></script>
-<script src="{{asset('js/main.js')}}"></script>
-<script src="https://js.stripe.com/v3/"></script>
+<div class="">
+
+</div>
+<!-- Scripts -->
+
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('styles/bootstrap4/popper.js')}}"></script>
+<script src="{{asset('styles/bootstrap4/bootstrap.min.js')}}"></script>
+<script src="{{asset('plugins/Isotope/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+<script src="{{asset('plugins/easing/easing.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 
 
 </body>

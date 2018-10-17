@@ -2,8 +2,8 @@
 @section('content')
     <h3>Add Product</h3>
 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-md-offset-2">
         {!! Form::open(['route' => 'product.store','method'=> 'post','files'=>true]) !!}
         <div class="form-group">
             {{ Form::label('name', 'Name') }}

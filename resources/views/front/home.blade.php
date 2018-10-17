@@ -2,252 +2,150 @@
 @section('content')
     <header>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>First Slide</h3>
-                        <p>This is a description for the first slide.</p>
-                    </div>
-                </div>
-                <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Second Slide</h3>
-                        <p>This is a description for the second slide.</p>
-                    </div>
-                </div>
-                <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Third Slide</h3>
-                        <p>This is a description for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </header>
-    <!-- Page Content -->
-    <div class="container">
-        <section id="portfolio">
-            <div class="container wow fadeInUp">
-                <div class="section-header">
-                    <h2 class="section-title">Categories</h2>
-                    <p class="section-description">Pick a category</p>
-                </div>
-                <div class="row">
+      <!-- Slider -->
 
-                    <div class="col-lg-12">
-                        <ul id="portfolio-flters">
-                            <li data-filter=".filter-app, .filter-card, .filter-logo, .filter-web" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-logo">Logo</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="main_slider" style="background-image:url(images/slider_1.jpg)">
+        <div class="container fill_height">
+          <div class="row align-items-center fill_height">
+            <div class="col">
+              <div class="main_slider_content">
+                <h6>Spring / Summer Collection 2017</h6>
+                <h1>Get up to 30% Off New Arrivals</h1>
+                <div class="red_button shop_now_button"><a href="#">shop now</a></div>
+              </div>
             </div>
-                <div class="row">
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner -->
+
+      <div class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
+                <div class="banner_category">
+                  <a href="categories.html">women's</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
+                <div class="banner_category">
+                  <a href="categories.html">accessories's</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
+                <div class="banner_category">
+                  <a href="categories.html">men's</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- Page Content -->
+
+    <!-- New Arrivals -->
+
+    <div class="new_arrivals">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <div class="section_title new_arrivals_title">
+              <h2>New Arrivals</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col text-center">
+            <div class="new_arrivals_sorting">
+              <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
+                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
+                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
 
                         @forelse($items->chunk(4) as $chunk)
                             @foreach($chunk as $item)
-                                <div class="small-3 medium-3 large-3 columns">
-                                    <div class="item-wrapper">
-                                        <div class="img-wrapper">
-                                            <a href="{{route('cart.addItem',$item->id)}}" class="button expanded add-to-cart">
-                                                Add to Cart
-                                            </a>
-                                            <a href="#">
-                                                <img src="{{url('images',$item->image)}}"/>
-                                            </a>
-                                        </div>
-                                        <a href="{{route('item')}}">
-                                            <h3>
-                                                {{$item->name}}
-                                            </h3>
-                                        </a>
-                                        <h5>
-                                            ${{$item->price}}
-                                        </h5>
-                                        <p>
-                                            {{$item->description}}
-                                        </p>
-                                    </div>
-
+                              <div class="product-item men">
+                                <div class="product discount product_filter">
+                                  <div class="product_image">
+                                    <img src="{{url('images',$item->image)}}" alt="">
+                                  </div>
+                                  <div class="favorite favorite_left"></div>
+                                  <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                  <div class="product_info">
+                                    <h6 class="product_name"><a href="{{route('item')}}">{{$item->name}}</a></h6>
+                                    <h6 class="product_name">{{$item->description}}</h6>
+                                    <div class="product_price">${{$item->price}}<span>$590.00</span></div>
+                                  </div>
                                 </div>
+                                <div class="red_button add_to_cart_button"><a href="{{route('cart.addItem',$item->id)}}">add to cart</a></div>
+                              </div>
                             @endforeach
                         @empty
                             <h3>No items</h3>
                         @endforelse
 
-
-
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
 
+              <!-- Deal of the week -->
 
-        </section>
-        <!-- Marketing Icons Section -->
-        <h1 class="my-4">Welcome to Modern Business</h1>
-
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+              <div class="deal_ofthe_week">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                      <div class="deal_ofthe_week_img">
+                        <img src="{{asset('images/deal_ofthe_week.png')}}" alt="">
+                      </div>
                     </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="col-lg-6 text-right deal_ofthe_week_col">
+                      <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
+                        <div class="section_title">
+                          <h2>Deal Of The Week</h2>
+                        </div>
+                        <ul class="timer">
+                          <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="day" class="timer_num">03</div>
+                            <div class="timer_unit">Day</div>
+                          </li>
+                          <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="hour" class="timer_num">15</div>
+                            <div class="timer_unit">Hours</div>
+                          </li>
+                          <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="minute" class="timer_num">45</div>
+                            <div class="timer_unit">Mins</div>
+                          </li>
+                          <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="second" class="timer_num">23</div>
+                            <div class="timer_unit">Sec</div>
+                          </li>
+                        </ul>
+                        <div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <h2>Portfolio Heading</h2>
-
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project One</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project Two</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project Three</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project Four</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project Five</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Project Six</a>
-                        </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Features Section -->
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>Modern Business Features</h2>
-                <p>The Modern Business template by Start Bootstrap includes:</p>
-                <ul>
-                    <li>
-                        <strong>Bootstrap v4</strong>
-                    </li>
-                    <li>jQuery</li>
-                    <li>Font Awesome</li>
-                    <li>Working contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-            </div>
-            <div class="col-lg-6">
-                <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Call to Action Section -->
-        <div class="row mb-4">
-            <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-            </div>
-            <div class="col-md-4">
-                <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-            </div>
-        </div>
-
-    </div>
+              </div>
     <!-- /.container -->
     @endsection
