@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 1600px)
 {
-	
+
 }
 
 /************
@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 1540px)
 {
-	
+
 }
 
 /************
@@ -42,7 +42,7 @@
 
 @media only screen and (max-width: 1380px)
 {
-	
+
 }
 
 /************
@@ -51,7 +51,7 @@
 
 @media only screen and (max-width: 1280px)
 {
-	
+
 }
 
 /************
@@ -76,7 +76,7 @@
 
 @media only screen and (max-width: 1024px)
 {
-	
+
 }
 
 /************
@@ -183,7 +183,7 @@
 
 @media only screen and (max-width: 959px)
 {
-	
+
 }
 
 /************
@@ -192,7 +192,7 @@
 
 @media only screen and (max-width: 880px)
 {
-	
+
 }
 
 /************
@@ -201,7 +201,7 @@
 
 @media only screen and (max-width: 768px)
 {
-	
+
 }
 
 /************
@@ -213,7 +213,7 @@
 	h1{font-size: 36px;}
 	h2{font-size: 24px;}
 	h6{font-size: 12px;}
-	.red_button a
+	.red_buttons a
 	{
 		font-size: 12px;
 	}
@@ -302,7 +302,7 @@
 		margin-left: 0px;
 		margin-top: 15px;
 	}
-	.add_to_cart_button
+	.add_to_cart_buttons
 	{
 		margin-left: 0px;
 		margin-top: 15px;
@@ -370,7 +370,7 @@
 
 @media only screen and (max-width: 539px)
 {
-	
+
 }
 
 /************
@@ -379,7 +379,7 @@
 
 @media only screen and (max-width: 480px)
 {
-	
+
 }
 
 /************
@@ -444,9 +444,9 @@
 	{
 		width: 15px;
 		height: 15px;
-		font-size: 10px;		
+		font-size: 10px;
 	}
-	.add_to_cart_button
+	.add_to_cart_buttons
 	{
 		margin-top: 20px;
 	}
@@ -491,12 +491,12 @@
 	{
 		font-size: 12px !important;
 	}
-	#newsletter_email::-moz-placeholder /* Firefox 19+ */ 
+	#newsletter_email::-moz-placeholder /* Firefox 19+ */
 	{
 		font-size: 12px !important;
-	} 
+	}
 	#newsletter_email:-ms-input-placeholder
-	{ 
+	{
 		font-size: 12px !important;
 	}
 	#newsletter_email::input-placeholder
@@ -504,7 +504,7 @@
 		font-size: 12px !important;
 	}
 	.review_submit_btn,
-	.add_to_cart_button
+	.add_to_cart_buttons
 	{
 		font-size: 12px;
 		width: 130px;
@@ -535,5 +535,5 @@
 
 @media only screen and (max-width: 400px)
 {
-	
+
 }
