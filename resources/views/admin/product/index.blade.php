@@ -11,7 +11,7 @@
 
                 <div class="col-md-8">
                     <h4>Name of product:{{$product->name}}</h4>
-                   <h4>Category:{{count($product->category)?$product->category->name:"N/A"}}</h4>
+                   <h4>Category:{{$product->category->name}}</h4>
                     @foreach ($product->images as $image)
 
                         <img src="{{$image->image_path}}" style="max-width: 100px">
