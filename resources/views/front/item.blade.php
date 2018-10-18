@@ -236,7 +236,7 @@
       											<textarea id="review_message" class="input_review" name="message"  placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
       										</div>
       										<div class="text-left text-sm-right">
-      											<button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">submit</button>
+      											<button id="review_submit" type="submit" class="red_buttons review_submit_btn trans_300" value="Submit">submit</button>
       										</div>
       									</form>
       								</div>

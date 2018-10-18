@@ -50,9 +50,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($categoryId)
     {
-        $products= Category::find($id)->products;
+        if(!empty($categoryId)) {
+            $products = Category::find($categoryId)->products;
+        }
         $categories= Category::all();
         return view('admin.category.index',compact(['categories','products']));
     }
@@ -88,6 +90,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category= Category::find($id);
+        $category->products()->delete();
+        $category= delete();
+        return back();
     }
 }

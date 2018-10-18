@@ -264,7 +264,11 @@
 <script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
 <script src="{{asset('plugins/easing/easing.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<<<<<<< HEAD
 <script src="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
+=======
+</div>
+>>>>>>> 0ef4a8541e5fa5bd00a39f4e490f43b3843af38e
 
 </body>
 
