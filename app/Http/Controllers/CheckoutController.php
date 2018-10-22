@@ -49,7 +49,7 @@ class CheckoutController extends Controller
         }
 
           //create the order
-        Order::createOrder();
+        \App\Order::createOrder();
 
         return "Order completed";
 

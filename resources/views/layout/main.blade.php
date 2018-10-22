@@ -39,6 +39,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/single_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/single_responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_responsive.css')}}">
 
 </head>
 
@@ -264,6 +266,8 @@
 <script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
 <script src="{{asset('plugins/easing/easing.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/categories_custom.js')}}"></script>
+<script src="{{asset('js/single_custom.js')}}"></script>
 <<<<<<< HEAD
 <script src="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 =======

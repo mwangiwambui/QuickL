@@ -34,7 +34,7 @@
                   Grand Total - ${{Cart::total()}}
                 </div>
                 <div class="col-md-3">
-                  <a class="btn btn-primary pull-right navbar-right" data-toggle="modal" href="#category">Checkout</a>
+                  <a class="btn btn-primary pull-right navbar-right"  href="{{route('checkout.shipping')}}">Checkout</a>
                 </div>
               </div>
             </div>

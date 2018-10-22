@@ -38,9 +38,10 @@
         {{ Form::submit('Proceed to Payment', array('class' => 'btn btn-danger btn-block btn-glow  mx-1')) }}
       </div>
 
+      {!! Form::close() !!}
 
     </div>
-    {!! Form::close() !!}
+
         </div>
     </div>
 
