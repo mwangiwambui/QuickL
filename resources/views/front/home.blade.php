@@ -106,7 +106,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div><br><br>
 
               <!-- Deal of the week -->
 
