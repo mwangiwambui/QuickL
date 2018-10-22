@@ -27,7 +27,7 @@ class OrderController extends Controller
         {
             $order= Order::find($orderId);
             if ($request->has('delivered')) {
-                Mail::to('customer@gmail.com')->send(new OrderShipped($order));
+                Mail::to($order->user)->send(new OrderShipped($order));
 
 
                 $order->delivered = $request->delivered;
