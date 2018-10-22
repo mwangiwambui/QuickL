@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use Gate;
+use App\Product;
+use Illuminate\Support\Facades\Gate;
 
 class CategoriesController extends Controller
 {
