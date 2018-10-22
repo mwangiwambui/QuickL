@@ -2,29 +2,70 @@
 
 @section('content')
 
+<div class="row" style="margin-left: 245px;">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Categories</h4>
+				<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+				<div class="heading-elements">
+					<ul class="list-inline mb-0">
+						<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+						<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+						<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+						<li><a data-action="close"><i class="ft-x"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card-content collapse show">
+				<div class="card-body">
+					<div class="" style="margin-bottom: 75px;">
+            <a class="btn btn-primary pull-right navbar-right" data-toggle="modal" href="#category">Add Category</a>
+          </div>
+
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Category Name</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+                  @if(!empty($categories))
+                      @forelse($categories as $category)
+													<tr>
+        									<th scope="row">1</th>
+        									<td><h5>{{$category->name}}</h5></td>
+        									<td>
+                            {{-- delete button --}}
+                            <form action="{{route('category.destroy',$category->id)}}"  method="POST">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <button class="btn btn-sm btn-danger" type="submit"><i class="la la-trash"></i></button>
+                            </form>
+                          </td>
+													</tr>
+                        @empty
+												<tr>
+
+                          <th scope="row">1</th>
+                          <td>No categories</td>
+													</tr>
+                      @endforelse
+                  @endif
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
     <div class="navbar">
-        <a class="navbar-brand" href="#">Categories =></a>
-        <ul class="nav navbar-nav">
-            @if(!empty($categories))
-                @forelse($categories as $category)
-                    <li class="active">
-                        <a href="{{route('category.show',$category->id)}}">{{$category->name}}</a>
-                        {{-- delete button --}}
-                        <form action="{{route('category.destroy',$category->id)}}"  method="POST">
-                            {{csrf_field()}}
-                            {{method_field('DELETE')}}
-                            <input class="btn btn-sm btn-danger" type="submit" value="Delete">
-                        </form>
-
-                    </li>
-                @empty
-                    <li>No Items</li>
-                @endforelse
-            @endif
-
-        </ul>
-
-
 
         <a class="btn btn-primary pull-right navbar-right" data-toggle="modal" href="#category">Add Category</a>
         <div class="modal fade" id="category">
@@ -54,27 +95,6 @@
         </div><!-- /.modal -->
     </div>
 
-    {{--products--}}
-    @if(isset($products))
 
-        <h3>Products</h3>
-
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>Products</th>
-            </tr>
-            </thead>
-            <tbody>
-            @forelse($products as $product)
-                <tr><td>{{$product->name}}</td></tr>
-            @empty
-                <tr><td>no data</td></tr>
-            @endforelse
-
-            </tbody>
-        </table>
-    @endif
 
 @endsection
-

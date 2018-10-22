@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{asset('css/modern-business.css')}}" rel="stylesheet">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,11 +25,8 @@
     <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
 
     <!-- FontAwesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-    <!-- Main Stylesheet File -->
-    <link href="{{asset('css/stingo.css')}}" rel="stylesheet">
-    <link href="{{asset('css/style2.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{asset('styles/bootstrap4/bootstrap.min.css')}}">
     <link href="{{asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet')}}" type="text/css">
@@ -40,6 +35,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/main_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/themify-icons/themify-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/single_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/single_responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_responsive.css')}}">
 
 </head>
 
@@ -265,7 +266,13 @@
 <script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
 <script src="{{asset('plugins/easing/easing.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/categories_custom.js')}}"></script>
+<script src="{{asset('js/single_custom.js')}}"></script>
+<<<<<<< HEAD
+<script src="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
+=======
 </div>
+>>>>>>> 0ef4a8541e5fa5bd00a39f4e490f43b3843af38e
 
 </body>
 
