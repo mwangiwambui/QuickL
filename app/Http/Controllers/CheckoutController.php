@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Stripe\Card;
-use Stripe\Order;
+use App\Order;
+use Stripe\Stripe;
+
 
 class CheckoutController extends Controller
 {
@@ -30,7 +31,7 @@ class CheckoutController extends Controller
 
         // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey("sk_test_Eu8C7K0abKoeGjPC7qjxGHKa");
+        Stripe::setApiKey("sk_test_Eu8C7K0abKoeGjPC7qjxGHKa");
 
 // Token is created using Checkout or Elements!
 // Get the payment token ID submitted by the form:
@@ -49,7 +50,7 @@ class CheckoutController extends Controller
         }
 
           //create the order
-        \App\Order::createOrder();
+        Order::createOrder();
 
         return "Order completed";
 

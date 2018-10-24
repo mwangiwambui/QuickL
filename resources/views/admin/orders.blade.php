@@ -29,10 +29,12 @@
                             <td>{{$item->pivot->total}}</td>
 
                         </tr>
+                    @endforeach
                 </table>
-                @endforeach
-
             </li>
+
+
+
 
 
         @endforeach
