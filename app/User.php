@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','users_role'
     ];
 
     /**
@@ -37,8 +37,13 @@ class User extends Authenticatable
     }
 
     public function request(){
+        return $this->hasMany(Request::class);
+    }
+    public function industry(){
         return $this->hasMany(Industry::class);
     }
+
+
 
 
 }

@@ -10,8 +10,8 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li class="active"><a href="{{route('home')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
               </ul>
             </div>
 
@@ -120,15 +120,15 @@
                       <div class="product-item men">
                         <div class="product discount product_filter">
                           <div class="product_image">
-                            <a href="{{route('item')}}">
+                            <a href="{{route('item',$item->id)}}">
                               <img src="{{url('images',$item->image)}}" alt="product image">
                             </a>
                           </div>
                           <div class="favorite favorite_left"></div>
                           <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
                           <div class="product_info">
-                            <h6 class="product_name"><a href="{{route('item')}}">{{$item->name}}</a></h6>
-                            <h6 class="product_name"><a href="{{route('item')}}">{{$item->description}}</a></h6>
+                            <h6 class="product_name"><a href="{{route('item',$item->id)}}">{{$item->name}}</a></h6>
+                            <h6 class="product_name"><a href="{{route('item',$item->id)}}">{{$item->description}}</a></h6>
                             <div class="product_price">${{$item->price}}<span>$590.00</span></div>
                           </div>
                         </div>
@@ -224,6 +224,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
 
 @endsection

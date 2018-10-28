@@ -3,9 +3,9 @@
     <h3>Requests</h3>
 
     <ul>
-        @foreach($requests as $request)
+        @foreach($industries as $industry)
             <li>
-                <h4>Request by {{$request->industry->name}}</h4>
+                <h4>Request by {{$industry->user->name}} <br>Name {{$industry->name}}</h4>
 
                 <form action="{{route('toggle.accepted',$industry->id)}}" method="POST" class="pull-right">
                     {{csrf_field()}}
@@ -17,10 +17,19 @@
                 <h5>Industries</h5>
                 <table class="table table-bordered">
                     <tr>
-                        <th>Name</th>
-                        <th>Goods</th>
-                        <th>Location</th>
+
+                        <th>CompanyName</th>
+                        <th>License</th>
                     </tr>
+                    @foreach($industry->requestIndustry as $request)
+                        <tr>
+
+                            <td>{{$request->companyname}}</td>
+                            <td>{{$request->license}}</td>
+
+                        </tr>
+                    @endforeach
+
 
                 </table>
 

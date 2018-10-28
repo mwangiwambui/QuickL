@@ -32,6 +32,7 @@ class Order extends Model
         $cartItems= Cart::content();
         foreach ($cartItems as $cartItem){
             $order->orderItems()->attach($cartItem->id,[
+
                 'qty'=>$cartItem->qty,
                 'total'=>$cartItem->qty*$cartItem->price
             ]);

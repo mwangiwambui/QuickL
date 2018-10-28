@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\User;
 use Illuminate\Http\Request;
-use App\Product;
-use Illuminate\Support\Facades\Gate;
 
-class CategoriesController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        if(!Gate::allows('isIndustry')){
-            abort(404, "Sorry, You cant do this actions");
-        }
-        $categories= Category::all();
-
-
-        return view('admin.category.index',compact('categories','products'));
+        $users= User::all();
+        return view('admin.users', compact('users'));
     }
 
     /**
@@ -43,8 +36,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-        return back();
+        //
     }
 
     /**
@@ -53,13 +45,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($categoryId)
+    public function show($id)
     {
-        if(!empty($categoryId)) {
-            $products = Category::find($categoryId)->products;
-        }
-        $categories= Category::all();
-        return view('admin.category.index',compact(['categories','products']));
+        $users= User::all();
+        return view('users',compact(['users']));
+
     }
 
     /**
@@ -70,7 +60,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users= User::find($id);
+        return view('admin.edit',compact('users'));
     }
 
     /**
@@ -82,7 +73,13 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+
+            'users_role'=>'required',
+
+        ]);
+        User::find($id)->update($request->all());
+        return redirect()->route('users.index')->with('message','item has been updated successfully');
     }
 
     /**
@@ -93,9 +90,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category= Category::find($id);
-        $category->products()->delete();
-        $category= delete();
-        return back();
+        User::find($id)->delete();
+        return redirect()->route('users.index')->with('message','item has been deleted successfully');
     }
 }

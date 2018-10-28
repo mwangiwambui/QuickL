@@ -37,7 +37,7 @@
                       @forelse($categories as $category)
 													<tr>
         									<th scope="row">1</th>
-        									<td><h5>{{$category->name}}</h5></td>
+														<td><h5><a href="{{route('category.show',$category->id)}}"> {{$category->name}}</a></h5></td>
         									<td>
                             {{-- delete button --}}
                             <form action="{{route('category.destroy',$category->id)}}"  method="POST">
@@ -94,6 +94,27 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
     </div>
+
+@if(isset($products))
+
+	<h3>Products</h3>
+
+	<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Products</th>
+		</tr>
+		</thead>
+		<tbody>
+		@forelse($products as $product)
+			<tr><td>{{$product->name}}</td></tr>
+		@empty
+			<tr><td>no data</td></tr>
+		@endforelse
+
+		</tbody>
+	</table>
+@endif
 
 
 

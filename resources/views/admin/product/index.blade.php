@@ -6,17 +6,17 @@
 
     <ul class="container">
         @forelse($products as $product)
-            <li class="row">
-
-
+            <li class="row" style="margin-left: 245px;">
                 <div class="col-md-8">
                     <h4>Name of product:{{$product->name}}</h4>
                    <h4>Category:{{$product->category->name}}</h4>
-                    @foreach ($product->images as $image)
 
+                    @foreach($product->images as $image)
                         <img src="{{$image->image_path}}" style="max-width: 100px">
 
-                    @endforeach
+
+                        @endforeach
+
                     <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary btn-sm ">Edit Product</a>
                     <br>
 

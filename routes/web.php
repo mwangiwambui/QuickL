@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/','FrontController@index')->name('home');
-Route::get('/item','FrontController@item')->name('item');
 Route::get('/items','FrontController@items')->name('items');
+Route::get('items/{product}','FrontController@item')->name('item');
+
 Route::get('/about','FrontController@about')->name('about');
 Route::get('/faq','FrontController@faq')->name('faq');
 Route::get('/contact','FrontController@contact')->name('contact');
@@ -34,17 +35,22 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/',function(){
         return view('admin.index');
     })->name('admin.index');
+
+    Route::post('product/image-upload/{productId})','ProductsController@uploadImages');
     Route::resource('product','ProductsController');
     Route::resource('category','CategoriesController');
+    Route::resource('users','UsersController');
     Route::get('orders/{type?}', 'OrderController@Orders');
-    Route::get('requests/{type?}', 'RequestController@Requests');
+    Route::get('requests/{type?}', 'RequestController@Industries');
 
 
 });
+Route::resource('request','IndustryController');
 Route::resource('address','AddressController');
 //Route::get('checkout','CheckoutController@step1');
 Route::group(['middleware' => 'auth'], function (){
     Route::get('shipping-info','CheckoutController@shipping')->name('checkout.shipping');
+    Route::get('requests','FrontController@request')->name('industry.request');
 });
 
 Route::get('payment','CheckoutController@payment')->name('checkout.payment');

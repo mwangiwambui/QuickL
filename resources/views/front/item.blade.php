@@ -30,15 +30,18 @@
       						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
       							<div class="single_product_thumbnails">
       								<ul>
-      									<li><img src="{{asset('images/single_1_thumb.jpg')}}" alt="" data-image="{{asset('images/single_1.jpg')}}"></li>
-      									<li class="active"><img src="{{asset('images/single_2_thumb.jpg')}}" alt="" data-image="{{asset('images/single_2.jpg')}}"></li>
-      									<li><img src="{{asset('images/single_3_thumb.jpg')}}" alt="" data-image="{{asset('images/single_3.jpg')}}"></li>
+										@foreach($product->images as $image)
+
+
+      									<li class="imageitem"><img src="{{$image->$image}}" alt="" data-image="{{$image->$image}}"></li>
+											@endforeach
+
       								</ul>
       							</div>
       						</div>
       						<div class="col-lg-9 image_col order-lg-2 order-1">
       							<div class="single_product_image">
-      								<div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div>
+      								<div class="single_product_image_background" style="background-image:url('images/single_2.jpg')"></div>
       							</div>
       						</div>
       					</div>
@@ -47,14 +50,14 @@
       			<div class="col-lg-5">
       				<div class="product_details">
       					<div class="product_details_title">
-      						<h2>Pocket cotton sweatshirt</h2>
-      						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+      						<h2>{{$product->name}}</h2>
+      						<p>{!! $product->description !!}</p>
       					</div>
       					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
       						<span class="ti-truck"></span><span>free delivery</span>
       					</div>
-      					<div class="original_price">$629.99</div>
-      					<div class="product_price">$495.00</div>
+      					<div class="original_price">${{$product->price}}</div>
+      					<div class="product_price">${{$product->price}}</div>
       					<ul class="star_rating">
       						<li><i class="fa fa-star" aria-hidden="true"></i></li>
       						<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -244,6 +247,7 @@
       							</div>
 
       						</div>
+
       					</div>
 
       				</div>
@@ -254,4 +258,15 @@
 
     </div>
     <!-- /.container -->
+	<script>
+		$(document).ready(function () {
+		    $('.imageitem').click(function (e) {
+		        $("li:first").addClass("active");
+
+
+            })
+
+        })
+
+	</script>
     @endsection

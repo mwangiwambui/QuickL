@@ -35,9 +35,15 @@ class FrontController extends Controller
         return view('front.404');
 
     }
-    public function item(){
-        return view('front.item');
+    public function item(Product $product){
 
+
+        return view('front.item', compact('product'));
+
+    }
+
+    public function request(){
+        return view('front.requests');
     }
 
 }

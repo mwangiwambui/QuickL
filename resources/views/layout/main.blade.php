@@ -96,8 +96,9 @@
                   <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="account_selection">
-                  <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                  <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                  <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                  <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                  <li><a href="{{route('logout')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -121,6 +122,7 @@
               <li><a href="{{url('/')}}">home</a></li>
               <li><a href="{{url('/items')}}">shop</a></li>
               <li><a href="{{url('/contact')}}">contact</a></li>
+              <li><a href="{{route('industry.request')}}">Register as Industry</a></li>
             </ul>
             <ul class="navbar_user">
               <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Industry;
+use App\User;
 use Illuminate\Http\Request;
-use App\Product;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 
-class CategoriesController extends Controller
+class IndustryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        if(!Gate::allows('isIndustry')){
-            abort(404, "Sorry, You cant do this actions");
-        }
-        $categories= Category::all();
+        return "Request Sent";
 
 
-        return view('admin.category.index',compact('categories','products'));
     }
 
     /**
@@ -43,8 +39,25 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-        return back();
+        $formInput= $request->except('license');
+       $this->validate($request,[
+           'companyname'=>'required',
+           'mail'=>'required',
+           'city'=>'required',
+           'state'=>'required',
+           'country'=>'required',
+           'contact'=>'required',
+           'capital'=>'required',
+       ]);
+       $license= $request->license;
+       if($license){
+           $licenseName= $license->getClientOriginalName();
+           $license->move('licenses',$licenseName);
+           $formInput['license']=$licenseName;
+
+       }
+       Auth::user()->request()->create($request->all());
+       return redirect()->route('industry.request')->with('message','request has been sent');
     }
 
     /**
@@ -53,13 +66,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($categoryId)
+    public function show($id)
     {
-        if(!empty($categoryId)) {
-            $products = Category::find($categoryId)->products;
-        }
-        $categories= Category::all();
-        return view('admin.category.index',compact(['categories','products']));
+        //
     }
 
     /**
@@ -93,9 +102,6 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category= Category::find($id);
-        $category->products()->delete();
-        $category= delete();
-        return back();
+        //
     }
 }

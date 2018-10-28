@@ -22,7 +22,7 @@
                         <th>qty</th>
                         <th>price</th>
                     </tr>
-                    @foreach($order->orderItems() as $item)
+                    @foreach($order->orderItems as $item)
                         <tr>
                             <td>{{$item->name}}</td>
                             <td>{{$item->pivot->qty}}</td>

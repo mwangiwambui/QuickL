@@ -15,6 +15,9 @@
                 </div>
             </div>
         </div>
+            </div>
+          </div>
+        </div>
         
         @endcan
 
@@ -22,4 +25,6 @@
             <h3>Admin</h3>
         @endcan
 
+
     @endsection
+
