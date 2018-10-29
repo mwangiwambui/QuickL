@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title','404 error')
+@section('title','feedback')
 @section('content')
 
 

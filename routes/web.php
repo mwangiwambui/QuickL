@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','FrontController@index')->name('home');
 Route::get('/items','FrontController@items')->name('items');
 Route::get('items/{product}','FrontController@item')->name('item');
-
+Route::get('/complete','FrontController@feedback')->name('feedback');
 Route::get('/about','FrontController@about')->name('about');
 Route::get('/faq','FrontController@faq')->name('faq');
 Route::get('/contact','FrontController@contact')->name('contact');

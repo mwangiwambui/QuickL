@@ -1,12 +1,10 @@
 @extends('layout.main')
 @section('content')
-    <br><br><br><br><br><br><br><br>
-
-    <div class="container">
-    <h2 class="brand-text" style="margin-left:220px">Send Request</h2><br><br>
-
-    <div class="row justify-content-center" style="margin-left:210px">
-        <div class="col-md-4 col-md-offset-2">
+<div class="container">
+  <br><br><br><br><br><br><br><br><br>
+  <div class="row justify-content-center">
+      <div class="col-md-4 col-md-offset-2 small-centered columns">
+  <h3>Shipping Info</h3><br>
             @if($success= Session::has('message'))
                 <div class="alert alert-success"><p>{{ $success }}</p></div>
 

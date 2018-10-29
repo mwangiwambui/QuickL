@@ -18,7 +18,7 @@ class CreateAddressesTable extends Migration
             $table->string('addressline');
             $table->string('city');
             $table->string('state');
-            $table->integer('zip');
+            $table->string('zip');
             $table->string('country');
             $table->string('phone');
             $table->timestamps();

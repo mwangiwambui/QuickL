@@ -52,7 +52,7 @@ class CheckoutController extends Controller
           //create the order
         Order::createOrder();
 
-        return "Order completed";
+        return view('front.Thankyou');
 
 
 
