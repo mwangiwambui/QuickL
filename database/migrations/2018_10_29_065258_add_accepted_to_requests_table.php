@@ -14,7 +14,7 @@ class AddAcceptedToRequestsTable extends Migration
     public function up()
     {
         Schema::table('Requests', function (Blueprint $table) {
-            $table->tinyInteger('accepted');
+            $table->tinyInteger('accepted',50)->default('0')->after('companyname');;
         });
     }
 

@@ -31,7 +31,7 @@ Route::resource('/cart', 'CartController');
 Route::get('/cart/add-item/{id}', 'CartController@addItem')->name('cart.addItem');
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::post('toggledeliver/{orderId}','OrderController@toggledeliver')->name('toggle.deliver');
-    Route::post('toggleaccepted/{industryId}','RequestController@toggleaccepted')->name('toggle.accepted');
+    Route::post('toggleaccepted/{industryId}','IndustryController@toggleaccepted')->name('toggle.accepted');
     Route::get('/',function(){
         return view('admin.index');
     })->name('admin.index');
@@ -41,7 +41,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::resource('category','CategoriesController');
     Route::resource('users','UsersController');
     Route::get('orders/{type?}', 'OrderController@Orders');
-    Route::get('requests/{type?}', 'RequestController@Industries');
+    Route::get('requests/{type?}', 'IndustryController@Industries');
 
 
 });

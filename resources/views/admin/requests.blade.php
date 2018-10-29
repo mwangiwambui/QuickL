@@ -5,9 +5,9 @@
     <ul>
         @foreach($industries as $industry)
             <li>
-                <h4>Request by {{$industry->user->name}} <br>Name {{$industry->requestIndustry->name}}</h4>
+                <h4>Request by {{$industry->user->name}} <br>Name of Industry: {{$industry->companyname}}</h4>
 
-                <form action="{{route('toggle.accepted',$industry->requestIndustry->id)}}" method="POST" class="pull-right">
+                <form action="{{route('toggle.accepted',$industry->id)}}" method="POST" class="pull-right">
                     {{csrf_field()}}
                     <label for="accepted">Approved</label>
                     <input type="checkbox" value="1" name="accepted" {{$industry->accepted==1?"checked":""}}>
@@ -21,7 +21,7 @@
                         <th>CompanyName</th>
                         <th>License</th>
                     </tr>
-                    @foreach($industry->requestsIndustry as $request)
+                    @foreach($industries as $request)
                         <tr>
 
                             <td>{{$request->companyname}}</td>
