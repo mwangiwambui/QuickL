@@ -30,11 +30,11 @@
       						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
       							<div class="single_product_thumbnails">
       								<ul>
-										@foreach($product->images as $image)
 
 
-      									<li class="imageitem"><img src="{{$image->$image}}" alt="" data-image="{{$image->$image}}"></li>
-											@endforeach
+
+      									<li class="imageitem"><img src="{{url('images',$product->image)}}" alt="" data-image="{{url('images',$product->image)}}"></li>
+
 
       								</ul>
       							</div>

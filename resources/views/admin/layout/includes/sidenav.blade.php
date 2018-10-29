@@ -10,23 +10,21 @@
   </div>
   <div class="main-menu-content">
     <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-      <li class="active"><a href="{{url('/admin')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
-      </li>
 
       @can('isIndustry')
 
-      <li class="submenu nav-item"><a href="{{route('admin.index')}}"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Products</span></a>
+        <li class="nav-item"><a href="#"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Products</span></a>
         <ul>
             <li><a href="{{route('product.index')}}">Products</a></li>
             <li><a href="{{route('product.create')}}">Add Product</a></li>
         </ul>
       </li>
-      <li class="submenu nav-item"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Category</span></a>
+      <li class="nav-item"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Category</span></a>
         <ul>
             <li><a href="{{route('category.index')}}">Category</a></li>
         </ul>
       </li>
-      <li class="submenu nav-item"><a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Orders</span></a>
+      <li class="nav-item"><a href="#"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Orders</span></a>
         <ul>
             <li><a href="{{url('admin/orders/pending')}}">Pending Orders</a></li>
             <li><a href="{{url('admin/orders/delivered')}}">Delivered Orders</a></li>

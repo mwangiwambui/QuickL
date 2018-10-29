@@ -8,7 +8,7 @@ class ProductImage extends Model
 {
     protected $guarded=[];
 
-    public function defaultName(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
 

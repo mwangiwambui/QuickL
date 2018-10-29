@@ -37,11 +37,9 @@ class User extends Authenticatable
     }
 
     public function request(){
-        return $this->hasMany(Request::class);
+        return $this->hasMany(RequestIndustry::class);
     }
-    public function industry(){
-        return $this->hasMany(Industry::class);
-    }
+
 
 
 

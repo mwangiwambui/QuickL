@@ -11971,7 +11971,7 @@ jQuery.extend( {
 			// Url cleanup var
 			urlAnchor,
 
-			// Request state (becomes false upon send and true upon completion)
+			// RequestIndustry state (becomes false upon send and true upon completion)
 			completed,
 
 			// To know if global events are to be dispatched
@@ -35288,7 +35288,7 @@ module.exports = function settle(resolve, reject, response) {
     resolve(response);
   } else {
     reject(createError(
-      'Request failed with status code ' + response.status,
+      'RequestIndustry failed with status code ' + response.status,
       response.config,
       null,
       response.request,
