@@ -16,7 +16,7 @@ class IndustryController extends Controller
      */
     public function index()
     {
-        return "Request Sent";
+        return "RequestIndustry Sent";
 
 
     }

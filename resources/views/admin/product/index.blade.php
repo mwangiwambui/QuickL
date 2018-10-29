@@ -11,11 +11,7 @@
                     <h4>Name of product:{{$product->name}}</h4>
                    <h4>Category:{{$product->category->name}}</h4>
 
-                    @foreach($product->images as $image)
-                        <img src="{{$image->image_path}}" style="max-width: 100px">
 
-
-                        @endforeach
 
                     <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary btn-sm ">Edit Product</a>
                     <br>
