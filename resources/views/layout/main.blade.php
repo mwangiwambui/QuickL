@@ -58,7 +58,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="top_nav_left">free shipping on all u.s orders over $50</div>
+          <div class="top_nav_left">For more assistance contact +254740233603</div>
         </div>
         <div class="col-md-6 text-right">
           <div class="top_nav_right">
@@ -66,29 +66,14 @@
 
               <!-- Currency / Language / My Account -->
 
-              <li class="currency">
-                <a href="#">
-                  usd
-                  <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="currency_selection">
-                  <li><a href="#">cad</a></li>
-                  <li><a href="#">aud</a></li>
-                  <li><a href="#">eur</a></li>
-                  <li><a href="#">gbp</a></li>
-                </ul>
-              </li>
+
               <li class="language">
-                <a href="#">
-                  English
-                  <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="language_selection">
-                  <li><a href="#">French</a></li>
-                  <li><a href="#">Italian</a></li>
-                  <li><a href="#">German</a></li>
-                  <li><a href="#">Spanish</a></li>
-                </ul>
+                <div id="google_translate_element"></div><script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
               </li>
               <li class="account">
                 <a href="#">
@@ -96,9 +81,9 @@
                   <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="account_selection">
-                  <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                  <li><a href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i>Sign In</a></li>
                   <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                  <li><a href="{{route('logout')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Logout</a></li>
+                  <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -152,44 +137,18 @@
     <ul class="menu_top_nav">
       <li class="menu_item has-children">
         <a href="#">
-          usd
-          <i class="fa fa-angle-down"></i>
-        </a>
-        <ul class="menu_selection">
-          <li><a href="#">cad</a></li>
-          <li><a href="#">aud</a></li>
-          <li><a href="#">eur</a></li>
-          <li><a href="#">gbp</a></li>
-        </ul>
-      </li>
-      <li class="menu_item has-children">
-        <a href="#">
-          English
-          <i class="fa fa-angle-down"></i>
-        </a>
-        <ul class="menu_selection">
-          <li><a href="#">French</a></li>
-          <li><a href="#">Italian</a></li>
-          <li><a href="#">German</a></li>
-          <li><a href="#">Spanish</a></li>
-        </ul>
-      </li>
-      <li class="menu_item has-children">
-        <a href="#">
           My Account
           <i class="fa fa-angle-down"></i>
         </a>
         <ul class="menu_selection">
-          <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-          <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+          <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+          <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
         </ul>
       </li>
-      <li class="menu_item"><a href="#">home</a></li>
-      <li class="menu_item"><a href="#">shop</a></li>
-      <li class="menu_item"><a href="#">promotion</a></li>
-      <li class="menu_item"><a href="#">pages</a></li>
-      <li class="menu_item"><a href="#">blog</a></li>
-      <li class="menu_item"><a href="#">contact</a></li>
+      <li class="menu_item"><a href="{{url('/')}}">home</a></li>
+      <li class="menu_item"><a href="{{url('/items')}}">shop</a></li>
+      <li class="menu_item"><a href="{{url('/contact')}}">contact</a></li>
+      <li class="menu_item"><a href="{{route('industry.request')}}">register as industry</a></li>
     </ul>
   </div>
 </div>
@@ -197,28 +156,6 @@
 
 @yield('content')
 
-<!-- Newsletter -->
-
-<div class="newsletter">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-          <h4>Newsletter</h4>
-          <p>Subscribe to our newsletter and get 20% off your first purchase</p>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <form action="post">
-          <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-            <input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-            <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Footer -->
 
@@ -230,18 +167,17 @@
           <ul class="footer_nav">
             <li><a href="#">Blog</a></li>
             <li><a href="#">FAQs</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="{{url('/contact')}}">Contact us</a></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
           <ul>
-            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.skype.com"><i class="fab fa-skype"></i></a></li>
           </ul>
         </div>
       </div>
@@ -249,7 +185,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="footer_nav_container">
-          <div class="cr">©2018 All Rights Reserverd. This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a></div>
+          <div class="cr">©2018 All Rights Reserverd. This template is made with <i class="far fa-heart"></i> by <a href="#">Colorlib</a></div>
         </div>
       </div>
     </div>
