@@ -79,17 +79,40 @@
                 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
               </li>
-              <li class="account">
-                <a href="#">
-                  My account
-                  <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="account_selection"style="width:150px;">
-                  <li><a href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i>Sign In</a></li>
-                  <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                  <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-                </ul>
-              </li>
+                @if(Route::has('login'))
+
+                    <li class="account">
+                        <a href="#">
+                            {{Auth::user()->name}}
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="account_selection"style="width:150px;">
+                            <li><a href="{{route('login')}}"><i class="fa fa-sign-in-alt" aria-hidden="true"></i>Sign In</a></li>
+                            <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        </ul>
+                    </li>
+
+
+                @else
+
+
+
+
+                    <li class="account">
+                        <a href="#">
+                            My Account
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="account_selection"style="width:150px;">
+                            <li><a href="{{route('login')}}"><i class="fa fa-sign-in-alt" aria-hidden="true"></i>Sign In</a></li>
+                            <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                @endif
+
+
             </ul>
           </div>
         </div>
@@ -150,16 +173,41 @@
   <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
   <div class="hamburger_menu_content text-right">
     <ul class="menu_top_nav">
-      <li class="menu_item has-children">
-        <a href="#">
-          My Account
-          <i class="fa fa-angle-down"></i>
-        </a>
-        <ul class="menu_selection">
-          <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-          <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-        </ul>
-      </li>
+
+
+
+
+        @if(Route::has('login'))
+
+            <li class="menu_item has-children">
+                <a href="#">
+                    {{Auth::user()->name}}
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="menu_selection">
+                    <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                    <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                </ul>
+            </li>
+
+
+          @else
+
+
+
+
+            <li class="menu_item has-children">
+                <a href="#">
+                    My Account
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="menu_selection">
+                    <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                    <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                </ul>
+            </li>
+          @endif
+
       <li class="menu_item"><a href="{{url('/')}}">home</a></li>
       <li class="menu_item"><a href="{{url('/items')}}">shop</a></li>
       <li class="menu_item"><a href="{{url('/contact')}}">contact</a></li>

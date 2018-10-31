@@ -11,7 +11,7 @@
               <div class="main_slider_content" style="float: right;">
                 <h6 style="color: white;">Limited Edition 2018</h6><!-- description in application of advertisements 1 -->
                 <h1 style="color: white;">Limited stock</h1><!-- description in application of advertisements 2 -->
-                <div class="red_button shop_now_button"><a href="#" style="font-size: 18px;">shop now</a></div>
+                <div class="red_button shop_now_button"><a href="{{route('items')}}" style="font-size: 18px;">shop now</a></div>
               </div>
             </div>
           </div>
