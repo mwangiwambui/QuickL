@@ -56,7 +56,7 @@
                     @foreach($cartItems as $cartItem)
   													<tr>
           									<th style="font-size:18px;" scope="row">1</th>
-                            				<td style="font-size:18px;">{{$cartItem->name}}</td>
+                            <td style="font-size:18px;">{{$cartItem->name}}</td>
           									<td style="font-size:18px;">{{$cartItem->price}}</td>
                             <td>
                                 {!! Form::open(['route'=>['cart.update',$cartItem->rowId],'method'=>'PUT']) !!}

@@ -16,6 +16,11 @@
               </div>
             </div>
           </li>
+          <li>
+            <div class="" style="margin-top:25px;">
+              <h4 style="color:white">{{Auth::user()->name}}</h4>
+            </div>
+          </li>
         </ul>
       </div>
     </div>

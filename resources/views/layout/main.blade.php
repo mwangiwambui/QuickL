@@ -81,10 +81,10 @@
               </li>
               <li class="account">
                 <a href="#">
-                  My Account
+                  My account
                   <i class="fa fa-angle-down"></i>
                 </a>
-                <ul class="account_selection">
+                <ul class="account_selection"style="width:150px;">
                   <li><a href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i>Sign In</a></li>
                   <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                   <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
