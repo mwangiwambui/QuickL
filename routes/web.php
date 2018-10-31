@@ -26,7 +26,7 @@ Route::get('/404','FrontController@error')->name('error');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/cart', 'CartController');
 Route::get('/cart/add-item/{id}', 'CartController@addItem')->name('cart.addItem');
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
@@ -55,3 +55,6 @@ Route::group(['middleware' => 'auth'], function (){
 
 Route::get('payment','CheckoutController@payment')->name('checkout.payment');
 Route::post('store-payment','CheckoutController@storePayment')->name('payment.store');
+
+Route::post('/login/custom' ,'LoginController@login')->name('login.custom');
+

@@ -40,6 +40,10 @@ class User extends Authenticatable
         return $this->hasMany(RequestIndustry::class);
     }
 
+    public function product(){
+        return $this->hasMany(Product::class);
+    }
+
 
 
 

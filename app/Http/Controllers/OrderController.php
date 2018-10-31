@@ -28,7 +28,8 @@ class OrderController extends Controller
         {
             $order= Order::find($orderId);
             if ($request->has('delivered')) {
-                Mail::to($order->user)->send(new OrderShipped($order));
+                $time=Carbon::now()->addMinute(1);
+                Mail::to($order->user)->later($time,new OrderShipped($order));
 
 
                 $order->delivered = $request->delivered;

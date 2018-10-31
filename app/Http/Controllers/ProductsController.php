@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\ProductImage;
+use App\RequestIndustry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Gate;
 
@@ -36,7 +38,8 @@ class ProductsController extends Controller
     public function create()
     {
         $categories= Category::pluck('name','id');
-        return view('admin.product.create',compact('categories'));
+        $industry = RequestIndustry::pluck('id');
+        return view('admin.product.create',compact('categories','industry'));
     }
 
     /**
@@ -62,7 +65,9 @@ class ProductsController extends Controller
             $image->move('images',$imageName);
             $formInput['image']= $imageName;
         }
-        Product::create($formInput);
+        Auth::user()->product()->create($formInput);
+
+
         return redirect()->route('product.index');
     }
 

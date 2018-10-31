@@ -81,6 +81,7 @@
       							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
       						</div>
       						<div class="red_buttons add_to_cart_buttons"><a href="#">add to cart</a></div>
+							<div class="red_buttons add_to_cart_buttons"><a href="#">Contact Industry</a></div>
       						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
       					</div>
       				</div>

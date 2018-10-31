@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProductIdToIndustryTable extends Migration
+class AddDescriptionToOrdersProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AddProductIdToIndustryTable extends Migration
      */
     public function up()
     {
-        Schema::table('industries', function (Blueprint $table) {
-            $table->integer('product_id');
-
-
+        Schema::table('order_product', function (Blueprint $table) {
+            $table->string('description');
         });
     }
 
@@ -27,8 +25,8 @@ class AddProductIdToIndustryTable extends Migration
      */
     public function down()
     {
-        Schema::table('industries', function (Blueprint $table) {
-            //
+        Schema::table('order_product', function (Blueprint $table) {
+            $table->dropColumn('description');
         });
     }
 }
