@@ -15,8 +15,7 @@
       				<div class="breadcrumbs d-flex flex-row align-items-center">
       					<ul>
       						<li><a href="{{route('home')}}">Home</a></li>
-      						<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
-      						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li>
+      						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>{{$product->name}}</a></li>
       					</ul>
       				</div>
 
@@ -47,14 +46,11 @@
       					</div>
       				</div>
       			</div>
-      			<div class="col-lg-5">
+      			<div class="col-lg-5"style="margin-top:100px;">
       				<div class="product_details">
       					<div class="product_details_title">
       						<h2>{{$product->name}}</h2>
-      						<p>{!! $product->description !!}</p>
-      					</div>
-      					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-      						<span class="ti-truck"></span><span>free delivery</span>
+      						<h5>{!! $product->description !!}</h5>
       					</div>
       					<div class="original_price">${{$product->price}}</div>
       					<div class="product_price">${{$product->price}}</div>
@@ -65,14 +61,6 @@
       						<li><i class="fa fa-star" aria-hidden="true"></i></li>
       						<li><i class="fa fa-star" aria-hidden="true"></i></li>
       					</ul>
-      					<div class="product_color">
-      						<span>Select Color:</span>
-      						<ul>
-      							<li style="background: #e54e5d"></li>
-      							<li style="background: #252525"></li>
-      							<li style="background: #60b3f3"></li>
-      						</ul>
-      					</div>
       					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
       						<span>Quantity:</span>
       						<div class="quantity_selector">
@@ -80,10 +68,14 @@
       							<span id="quantity_value">1</span>
       							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
       						</div>
+
       						<div class="red_buttons add_to_cart_buttons"><a href="{{route('cart.addItem',$product->id)}}">add to cart</a></div>
 							<div class="red_buttons add_to_cart_buttons"><a href="#">Contact Industry</a></div>
+
+      						<div class="red_buttons add_to_cart_buttons"><a href="#">add to cart</a></div><br>
+
       						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
-      					</div>
+      					</div>                
       				</div>
       			</div>
       		</div>
@@ -119,28 +111,7 @@
       								<div class="tab_title">
       									<h4>Description</h4>
       								</div>
-      								<div class="tab_text_block">
-      									<h2>Pocket cotton sweatshirt</h2>
-      									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-      								</div>
-      								<div class="tab_image">
-      									<img src="{{asset('images/desc_1.jpg')}}" alt="">
-      								</div>
-      								<div class="tab_text_block">
-      									<h2>Pocket cotton sweatshirt</h2>
-      									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-      								</div>
-      							</div>
-      							<div class="col-lg-5 offset-lg-2 desc_col">
-      								<div class="tab_image">
-      									<img src="{{asset('images/desc_2.jpg')}}" alt="">
-      								</div>
-      								<div class="tab_text_block">
-      									<h2>Pocket cotton sweatshirt</h2>
-      									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-      								</div>
-      								<div class="tab_image desc_last">
-      									<img src="{{asset('images/desc_3.jpg')}}" alt="">
+      								<p>{!! $product->description !!}</p>
       								</div>
       							</div>
       						</div>
