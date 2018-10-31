@@ -4,7 +4,7 @@
   <br><br><br><br><br><br><br><br><br>
   <div class="row justify-content-center">
       <div class="col-md-4 col-md-offset-2 small-centered columns">
-  <h3>Shipping Info</h3><br>
+  <h3>Registration Form</h3><br>
             @if($success= Session::has('message'))
                 <div class="alert alert-success"><p>{{ $success }}</p></div>
 
@@ -43,11 +43,11 @@
 
 
             <div class="form-group">
-                {{ Form::label('license', 'Company License') }}
+                {{ Form::label('license', 'Add original scanned Company License') }}
                 {{ Form::file('License',array('class' => 'form-control')) }}
             </div><br>
 
-            <div class="" style="margin-right:30px">
+            <div class="" style="margin-right:7px">
                 {{ Form::submit('Register', array('class' => 'btn btn-danger btn-block btn-glow  mx-1')) }}
             </div><br><br>
 

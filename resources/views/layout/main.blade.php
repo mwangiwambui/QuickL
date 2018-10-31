@@ -118,7 +118,7 @@
 
               <li class="dropdown"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
-                  <li class="arrow_box">
+                  <li class="arrow_box"style="width:200px;">
                     <form>
                       <div class="input-group search-box" style="width:100%;padding-right:5px;padding-left:5px;">
                         <input class="form-control" id="search" type="text" placeholder="Search here...">

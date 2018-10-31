@@ -11,7 +11,7 @@
             <div class="breadcrumbs d-flex flex-row align-items-center">
               <ul>
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li class="active"><a href="{{route('home')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+                <li class="active"><a href="{{route('home')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>Shop</a></li>
               </ul>
             </div>
 
@@ -23,12 +23,9 @@
                   <h5>Product Category</h5>
                 </div>
                 <ul class="sidebar_categories">
-                  <li><a href="#">Men</a></li>
-                  <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li>
-                  <li><a href="#">Accessories</a></li>
-                  <li><a href="#">New Arrivals</a></li>
-                  <li><a href="#">Collection</a></li>
-                  <li><a href="#">Shop</a></li>
+                  <li><a href="#">Hardware</a></li>
+                  <li><a href="#">Electricals</a></li>
+                  <li><a href="#">Electronics</a></li>
                 </ul>
               </div>
 
@@ -42,20 +39,6 @@
                 </p>
                 <div id="slider-range"></div>
                 <div class="filter_button"><span>filter</span></div>
-              </div>
-
-              <!-- Sizes -->
-              <div class="sidebar_section">
-                <div class="sidebar_title">
-                  <h5>Sizes</h5>
-                </div>
-                <ul class="checkboxes">
-                  <li><i class="fa fa-square-o" aria-hidden="true"></i><span>S</span></li>
-                  <li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>M</span></li>
-                  <li><i class="fa fa-square-o" aria-hidden="true"></i><span>L</span></li>
-                  <li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
-                  <li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
-                </ul>
               </div>
 
             </div>
@@ -94,18 +77,7 @@
                           </ul>
                         </li>
                       </ul>
-                      <div class="pages d-flex flex-row align-items-center">
-                        <div class="page_current">
-                          <span>1</span>
-                          <ul class="page_selection">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                          </ul>
-                        </div>
-                        <div class="page_total"><span>of</span> 3</div>
-                        <div id="next_page" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-                      </div>
+
 
                     </div>
 
@@ -165,19 +137,7 @@
             </ul>
           </li>
         </ul>
-        <span class="showing_results">Showing 1–3 of 12 results</span>
-        <div class="pages d-flex flex-row align-items-center">
-          <div class="page_current">
-            <span>1</span>
-            <ul class="page_selection">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-            </ul>
-          </div>
-          <div class="page_total"><span>of</span> 3</div>
-          <div id="next_page_1" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-        </div>
+        
 
       </div>
 
