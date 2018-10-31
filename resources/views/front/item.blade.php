@@ -70,12 +70,9 @@
       						</div>
 
       						<div class="red_buttons add_to_cart_buttons"><a href="{{route('cart.addItem',$product->id)}}">add to cart</a></div>
-							<div class="red_buttons add_to_cart_buttons"><a href="#">Contact Industry</a></div>
-
-      						<div class="red_buttons add_to_cart_buttons"><a href="#">add to cart</a></div><br>
 
       						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
-      					</div>                
+      					</div>
       				</div>
       			</div>
       		</div>
