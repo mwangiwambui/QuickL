@@ -42,6 +42,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_responsive.css')}}">
 
+    <!-- instantsearch -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.3/dist/instantsearch.min.css">
+
 </head>
 
 <body>
@@ -110,8 +114,19 @@
               <li><a href="{{route('industry.request')}}">Register as Industry</a></li>
             </ul>
             <ul class="navbar_user">
-              <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+
+              <li class="dropdown"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                  <li class="arrow_box">
+                    <form>
+                      <div class="input-group search-box" style="width:100%;padding-right:5px;padding-left:5px;">
+                        <input class="form-control" id="search" type="text" placeholder="Search here...">
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+
               <li class="checkout">
                 <a href="{{route('cart.index')}}">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -206,11 +221,13 @@
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/categories_custom.js')}}"></script>
 <script src="{{asset('js/single_custom.js')}}"></script>
-<<<<<<< HEAD
+
 <script src="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
-=======
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.3"></script>
+
 </div>
->>>>>>> 0ef4a8541e5fa5bd00a39f4e490f43b3843af38e
+
 
 </body>
 

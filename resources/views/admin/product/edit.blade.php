@@ -1,11 +1,12 @@
 @extends('admin.layout.admin')
 
 @section('content')
+<br>
 
-    <h3>Edit Product</h3>
+    <h2 class="brand-text" style="margin-left:220px">Edit Product</h2><br><br>
 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="row justify-content-center" style="margin-left:210px">
+        <div class="col-md-4 col-md-offset-2">
             {!! Form::model($product,['route' => ['product.update',$product->id], 'method' => 'PUT', 'files' => true]) !!}
             <div class="form-group">
                 {{ Form::label('name', 'Name') }}
@@ -36,7 +37,12 @@
                 {{ Form::file('image',array('class' => 'form-control')) }}
             </div>
 
-            {{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
+            <br><br>
+
+            <div class="" style="margin-right:30px">
+              {{ Form::submit('Edit', array('class' => 'btn btn-danger btn-block btn-glow  mx-1')) }}
+            </div><br><br>
+
             {!! Form::close() !!}
 
 

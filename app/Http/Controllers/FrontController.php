@@ -45,5 +45,8 @@ class FrontController extends Controller
     public function request(){
         return view('front.requests');
     }
+    public function feedback(){
+      return view('front.Thankyou');
+    }
 
 }

@@ -37,16 +37,17 @@
       @can('isAdmin')
 
       <li class="nav-item"><a href="#"><i class="la la-wrench"></i><span class="menu-title" data-i18n="">Manage Users</span></a>
+        <ul>
+          <li class="nav-item"><a href="{{url('admin/requests/pending')}}"><i class="la la-hourglass-half"></i><span class="menu-title" data-i18n="">Pending Requests</span></a>
+          </li>
+          <li class="nav-item"><a href="{{url('admin/requests/accepted')}}"><i class="la la-thumbs-up"></i><span class="menu-title" data-i18n="">Approved Industries</span></a>
+          </li>
+          <li class="nav-item"><a href="{{url('admin/requests')}}"><i class="la la-university"></i><span class="menu-title" data-i18n="">All Industries</span></a>
+          </li>
+        </ul>
       </li>
-      <li class="nav-item"><a href="{{url('admin/requests/pending')}}"><i class="la la-hourglass-half"></i><span class="menu-title" data-i18n="">Pending Requests</span></a>
+      <li class="nav-item"><a href="{{route('users.index')}}"><i class="la la-university"></i><span class="menu-title" data-i18n="">Manage Roles</span></a>
       </li>
-      <li class="nav-item"><a href="{{url('admin/requests/accepted')}}"><i class="la la-thumbs-up"></i><span class="menu-title" data-i18n="">Approved Industries</span></a>
-      </li>
-      <li class="nav-item"><a href="{{url('admin/requests')}}"><i class="la la-university"></i><span class="menu-title" data-i18n="">All Industries</span></a>
-      </li>
-
-        <li class="nav-item"><a href="{{route('users.index')}}"><i class="la la-university"></i><span class="menu-title" data-i18n="">Manage Roles</span></a>
-        </li>
 
 
 

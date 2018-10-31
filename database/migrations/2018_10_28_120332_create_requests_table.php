@@ -13,7 +13,7 @@ class CreateRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('request_industries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('companyname');
             $table->string('mail');
@@ -26,6 +26,7 @@ class CreateRequestsTable extends Migration
             $table->integer('user_id');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -35,6 +36,7 @@ class CreateRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+
+        Schema::dropIfExists('request_industries');
     }
 }
