@@ -3,6 +3,7 @@
 namespace App;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,8 +16,9 @@ class Order extends Model
     }
 
     public function orderItems(){
-        return $this->belongsToMany(Product::class)->withPivot('qty','total');
+        return $this->belongsToMany(Product::class)->withPivot('qty','total','description');
     }
+
 
 
 
@@ -34,7 +36,8 @@ class Order extends Model
             $order->orderItems()->attach($cartItem->id,[
 
                 'qty'=>$cartItem->qty,
-                'total'=>$cartItem->qty*$cartItem->price
+                'total'=>$cartItem->qty*$cartItem->price,
+                'description'=>$cartItem->description
             ]);
         }
 

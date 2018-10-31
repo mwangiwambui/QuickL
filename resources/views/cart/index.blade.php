@@ -65,6 +65,7 @@
                             <td>
                                 {!! Form::select('size', ['small'=>'Small','medium'=>'Medium','large'=>'Large'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
                             </td>
+
                             <td>
                               <button style="float: left" type="submit" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
                               {!! Form::close() !!}
@@ -79,6 +80,11 @@
                               </form>
                             </td>
   													</tr>
+						<tr>
+							<td>
+								<input name="description" type="text" class="form-control" style="width: 100%;height: 50%;" value="{{$cartItem->description}}">
+							</td>
+						</tr>
                       @endforeach
   							</tbody>
   						</table>

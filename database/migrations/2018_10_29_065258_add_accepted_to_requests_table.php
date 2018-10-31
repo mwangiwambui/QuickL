@@ -26,7 +26,7 @@ class AddAcceptedToRequestsTable extends Migration
     public function down()
     {
         Schema::table('Requests', function (Blueprint $table) {
-            //
+            $table->dropColumn('accepted');
         });
     }
 }
