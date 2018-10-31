@@ -42,6 +42,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('styles/categories_responsive.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+
     <!-- instantsearch -->
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.3/dist/instantsearch.min.css">
@@ -110,7 +112,6 @@
             <ul class="navbar_menu">
               <li><a href="{{url('/')}}">home</a></li>
               <li><a href="{{url('/items')}}">shop</a></li>
-              <li><a href="{{url('/contact')}}">contact</a></li>
               <li><a href="{{route('industry.request')}}">Register as Industry</a></li>
             </ul>
             <ul class="navbar_user">
@@ -175,41 +176,17 @@
 <!-- Footer -->
 
 <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-          <ul class="footer_nav">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="{{url('/contact')}}">Contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-          <ul>
-            <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.skype.com"><i class="fab fa-skype"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <div class="container"><br><br><br><br>
     <div class="row">
       <div class="col-lg-12">
         <div class="footer_nav_container">
-          <div class="cr">©2018 All Rights Reserverd. This template is made with <i class="far fa-heart"></i> by <a href="#">Colorlib</a></div>
+          <div class="cr">©2018 QuickLink made with <i class="far fa-heart"></i></div>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<div class="">
-
-</div>
 <!-- Scripts -->
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
@@ -221,6 +198,8 @@
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/categories_custom.js')}}"></script>
 <script src="{{asset('js/single_custom.js')}}"></script>
+
+<script src="{{asset('js/popup.js')}}"></script>
 
 <script src="{{asset('plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 
