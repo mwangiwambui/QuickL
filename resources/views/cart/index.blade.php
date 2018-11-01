@@ -40,16 +40,17 @@
                     <th>Price/unit</th>
                     <th>Quantity</th>
                     <th>Size</th>
-                                    <th>contact industry</th>
+
   									<th>refresh</th>
   									<th>Delete</th>
 
   								</tr>
   							</thead>
   							<tbody>
+                            <?php $value = 1 ?>
                     @foreach($cartItems as $cartItem)
   													<tr>
-          									<td style="font-size:18px;" scope="row">{{$cartItem->id}}</td>
+          									<td style="font-size:18px;" scope="row">{{$value++}}</td>
                             <td style="font-size:18px;">{{$cartItem->name}}</td>
           									<td style="font-size:18px;">{{$cartItem->price}}</td>
                             <td>

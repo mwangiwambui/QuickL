@@ -22,7 +22,7 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>#</th>
+									<th>Number</th>
 									<th>Name</th>
 									<th>Category</th>
                   <th>.</th>
@@ -30,10 +30,11 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php $value=1; ?>
                   @if(!empty($products))
                       @forelse($products as $product)
 													<tr>
-        									<th scope="row">1</th>
+        									<th scope="row">{{$value++}}</th>
                           <td>{{$product->name}}</td>
                           <td>{{$product->category->name}}</td>
                           <td>

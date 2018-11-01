@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,8 +11,13 @@ class FrontController extends Controller
 {
     public function index()
     {
+
         $items= Product::all();
-        return view('front.home',compact('items'));
+        $id= Product::all('category_id');
+        $categories = Category::all('parent_id')->where('id',$id);
+
+
+        return view('front.home',compact('items','categories'));
     }
 
     public function items(){

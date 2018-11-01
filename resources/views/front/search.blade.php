@@ -102,7 +102,7 @@
                                                         <div class="product_info">
                                                             <h6 class="product_name"><a href="{{route('item',$item->id)}}">{{$item->name}}</a></h6>
                                                             <h6 class="product_name"><a href="{{route('item',$item->id)}}">{{$item->description}}</a></h6>
-                                                            <div class="product_price">${{$item->price}}<span>$590.00</span></div>
+                                                            <div class="product_price">${{$item->price}}</div>
                                                         </div>
                                                     </div>
                                                     <div class="red_button add_to_cart_button"><a href="{{route('cart.addItem',$item->id)}}">add to cart</a></div>

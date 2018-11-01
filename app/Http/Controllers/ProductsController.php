@@ -27,6 +27,7 @@ class ProductsController extends Controller
         //index page for showing products
         $user= Auth::user()->id;
 
+
         $products = Product::all()->where('user_id',$user);
 
         return view('admin.product.index',compact('products','user'));
@@ -40,8 +41,8 @@ class ProductsController extends Controller
     public function create()
     {
         $categories= Category::pluck('name','id');
-        $industry = RequestIndustry::pluck('id');
-        return view('admin.product.create',compact('categories','industry'));
+
+        return view('admin.product.create',compact('categories'));
     }
 
     /**

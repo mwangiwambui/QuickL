@@ -27,7 +27,7 @@
             <div class="col-md-4">
               <div class="banner_item align-items-center" style="background-image:url(images/home_tools.jpg)">
                 <div class="banner_category">
-                  <a href="categories.html">Hardware</a>
+                  <a href="{{route('items')}}">Hardware</a>
                 </div>
               </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="col-md-4">
               <div class="banner_item align-items-center" style="background-image:url(images/Electricals.jpeg)">
                 <div class="banner_category">
-                  <a href="categories.html">Electricals</a>
+                  <a href="{{route('items')}}">Electricals</a>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="col-md-4">
               <div class="banner_item align-items-center" style="background-image:url(images/electronics.jpg)">
                 <div class="banner_category">
-                  <a href="categories.html">Electronics</a>
+                  <a href="{{route('items')}}">Electronics</a>
                 </div>
               </div>
             </div>
@@ -66,18 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="row align-items-center">
-          <div class="col text-center">
-            <div class="new_arrivals_sorting">
-              <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">Hardware</li>
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Electricals</li>
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Electronics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        
         <div class="row">
           <div class="col">
             <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
@@ -85,7 +74,7 @@
 
                         @forelse($items->chunk(4) as $chunk)
                             @foreach($chunk as $item)
-                              <div class="product-item men">
+                              <div class="product-item {{$categories}}">
                                 <div class="product discount product_filter">
                                   <div class="product_image">
                                     <img src="{{url('images',$item->image)}}" alt="">
@@ -95,7 +84,7 @@
                                   <div class="product_info">
                                     <h6 class="product_name"><a href="{{route('item',$item->id)}}">{{$item->name}}</a></h6>
                                     <h6 class="product_name">{{$item->description}}</h6>
-                                    <div class="product_price">${{$item->price}}<span>$590.00</span></div>
+                                    <div class="product_price">${{$item->price}}</div>
                                   </div>
                                 </div>
                                 <div class="red_button add_to_cart_button"><a href="{{route('cart.addItem',$item->id)}}">add to cart</a></div>

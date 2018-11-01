@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\MainCategory;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
@@ -22,9 +23,10 @@ class CategoriesController extends Controller
         }
         $user= Auth::user()->id;
         $categories= Category::all()->where('user_id',$user);
+        $maincategories= MainCategory::pluck('name','id');
 
 
-        return view('admin.category.index',compact('categories','user'));
+        return view('admin.category.index',compact('categories','user','maincategories'));
     }
 
     /**
@@ -34,7 +36,9 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        $maincategories= MainCategory::pluck('id','name');
+
+        return view('admin.category.index',compact('maincategories'));
     }
 
     /**
@@ -45,7 +49,8 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Auth::user()->category()->create($request->all());
+        $formInput=$request->all();
+        Auth::user()->category()->create($formInput);
         return back();
     }
 
@@ -60,6 +65,7 @@ class CategoriesController extends Controller
         if(!empty($categoryId)) {
             $products = Category::find($categoryId)->products;
         }
+
         $categories= Category::all();
         return view('admin.category.index',compact(['categories','products']));
     }
@@ -95,9 +101,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category= Category::find($id);
-        $category->products()->delete();
-        $category= delete();
+
+
+        Category::destroy($id);
         return back();
     }
 }

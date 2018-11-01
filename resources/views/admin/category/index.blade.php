@@ -27,16 +27,18 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>#</th>
+									<th>Number</th>
 									<th>Category Name</th>
 									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
+							<?php $value=1;?>
                   @if(!empty($categories))
                       @forelse($categories as $category)
 													<tr>
-        									<th scope="row">1</th>
+        									<th scope="row">{{$value++}}</th>
+
 														<td><h5><a href="{{route('category.show',$category->id)}}"> {{$category->name}}</a></h5></td>
         									<td>
                             {{-- delete button --}}
@@ -107,6 +109,10 @@
                         <div class="form-group">
                             {{ Form::label('name', 'Title') }}
                             {{ Form::text('name', null, array('class' => 'form-control')) }}
+							{{ Form::label('parent_id', 'Main Category') }}
+							{{Form::select('parent_id', $maincategories, null, ['class' => 'form-control custom-select','id' => 'customSelect','placeholder'=>'Select Category']) }}
+
+									</div>
 
                         </div>
 

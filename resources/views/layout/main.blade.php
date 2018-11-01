@@ -145,8 +145,8 @@
             </ul>
             <ul class="navbar_user">
 
-              <li class="dropdown"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true" ></i></a>
-                <ul class="dropdown-menu">
+              <li class="dropdown" style="padding-right: 100px;"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true" ></i></a>
+                <ul class="dropdown-menu" >
                   <li class="arrow_box"style="width:200px;">
                       <form action="/search" method="POST" role="search">
                           {{ csrf_field() }}

@@ -16,7 +16,7 @@
             {{ Form::textarea('description', null, array('class' => 'form-control')) }}
         </div>
         <div class="form-group">
-            {{ Form::label('price', 'Price') }}
+            {{ Form::label('price', 'Price(in dollars)') }}
             {{ Form::text('price', null, array('class' => 'form-control')) }}
         </div>
 

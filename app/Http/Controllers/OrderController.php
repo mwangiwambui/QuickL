@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\OrderShipped;
 use App\Order;
 use App\Product;
 use App\User;
@@ -10,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderShipped;
 
 class OrderController extends Controller
 {
@@ -30,14 +30,14 @@ class OrderController extends Controller
             $orders=Order::all();
         }
 
-        return view('admin.orders',compact('orders','user'));
+        return view('admin.orders',compact('orders'));
         }
         public function toggledeliver(Request $request,$orderId)
         {
             $order= Order::find($orderId);
             if ($request->has('delivered')) {
-                $time=Carbon::now()->addMinute(1);
-                Mail::to($order->user)->later($time,new OrderShipped($order));
+
+                Mail::to($request->user())->send(new OrderShipped($order));
 
 
                 $order->delivered = $request->delivered;
