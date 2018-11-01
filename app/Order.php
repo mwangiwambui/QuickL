@@ -16,7 +16,7 @@ class Order extends Model
     }
 
     public function orderItems(){
-        return $this->belongsToMany(Product::class)->withPivot('qty','total','description');
+        return $this->belongsToMany(Product::class)->withPivot('qty','total');
     }
 
 
@@ -29,15 +29,18 @@ class Order extends Model
             'total'=>Cart::total(),
             'delivered'=>0
 
+
         ]);
 
         $cartItems= Cart::content();
+        $industry= Product::all();
         foreach ($cartItems as $cartItem){
             $order->orderItems()->attach($cartItem->id,[
 
                 'qty'=>$cartItem->qty,
                 'total'=>$cartItem->qty*$cartItem->price,
-                'description'=>$cartItem->description
+
+
             ]);
         }
 

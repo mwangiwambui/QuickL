@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use App\ProductImage;
 use App\RequestIndustry;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -24,10 +25,11 @@ class ProductsController extends Controller
             abort(404, "Sorry, You cant do this actions");
         }
         //index page for showing products
+        $user= Auth::user()->id;
 
-        $products = Product::all();
+        $products = Product::all()->where('user_id',$user);
 
-        return view('admin.product.index',compact('products'));
+        return view('admin.product.index',compact('products','user'));
     }
 
     /**

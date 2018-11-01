@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderShipped;
 use App\Order;
+use App\Product;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
-    public function Orders($type='')
-    {
+
+
+    public function Orders($type=''){
+
+
+
 
         if ($type == 'pending') {
+
             $orders = Order::where('delivered', '0')->get();
 
         } elseif ($type == 'delivered'){
@@ -22,7 +30,7 @@ class OrderController extends Controller
             $orders=Order::all();
         }
 
-        return view('admin.orders',compact('orders'));
+        return view('admin.orders',compact('orders','user'));
         }
         public function toggledeliver(Request $request,$orderId)
         {

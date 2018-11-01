@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\RequestIndustry;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class CartController extends Controller
     public function index()
     {
         $cartItems= Cart::content();
+        $industry= RequestIndustry::pluck('companyname');
 
-        return view('cart.index',compact('cartItems'));
+        return view('cart.index',compact('cartItems','industry'));
     }
 
     /**
@@ -66,7 +68,7 @@ class CartController extends Controller
 
     public function addItem($id){
         $product=Product::find($id);
-        Cart::add($id,$product->name,1,$product->price,['size'=>'medium']);
+        Cart::add($id,$product->name,1,$product->price,['size'=>'medium'],$product->user_id);
         return back();
 
     }

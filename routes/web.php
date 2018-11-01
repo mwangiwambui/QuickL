@@ -13,6 +13,7 @@
 
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/','FrontController@index')->name('home');
@@ -57,4 +58,12 @@ Route::get('payment','CheckoutController@payment')->name('checkout.payment');
 Route::post('store-payment','CheckoutController@storePayment')->name('payment.store');
 
 Route::post('/login/custom' ,'LoginController@login')->name('login.custom');
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $user = \App\Product::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+        return view('front.search')->withDetails($user)->withQuery ( $q );
+    else return view ('front.search')->withMessage('No Details found. Try to search again !');
+});
 

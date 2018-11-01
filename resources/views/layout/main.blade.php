@@ -81,7 +81,7 @@
                 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
               </li>
-                @if(Route::has('login'))
+                @if(Auth::check())
 
                     <li class="account">
                         <a href="#">
@@ -89,8 +89,7 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="account_selection"style="width:150px;">
-                            <li><a href="{{route('login')}}"><i class="fa fa-sign-in-alt" aria-hidden="true"></i>Sign In</a></li>
-                            <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+
                             <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                         </ul>
                     </li>
@@ -109,7 +108,7 @@
                         <ul class="account_selection"style="width:150px;">
                             <li><a href="{{route('login')}}"><i class="fa fa-sign-in-alt" aria-hidden="true"></i>Sign In</a></li>
                             <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                            <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+
                         </ul>
                     </li>
                 @endif
@@ -136,17 +135,32 @@
               <li><a href="{{url('/')}}">home</a></li>
               <li><a href="{{url('/items')}}">shop</a></li>
               <li><a href="{{route('industry.request')}}">Register as Industry</a></li>
+                @can('isIndustry')
+                    <li><a href="{{route('admin.index')}}">Dashboard</a></li>
+                    @endcan
+                @can('isAdmin')
+                    <li><a href="{{route('admin.index')}}">Dashboard</a></li>
+                @endcan
+
             </ul>
             <ul class="navbar_user">
 
-              <li class="dropdown"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+              <li class="dropdown"><a class="nav-link hide" data-toggle="dropdown" href="#"><i class="fa fa-search" aria-hidden="true" ></i></a>
                 <ul class="dropdown-menu">
                   <li class="arrow_box"style="width:200px;">
-                    <form>
-                      <div class="input-group search-box" style="width:100%;padding-right:5px;padding-left:5px;">
-                        <input class="form-control" id="search" type="text" placeholder="Search here...">
-                      </div>
-                    </form>
+                      <form action="/search" method="POST" role="search">
+                          {{ csrf_field() }}
+                          <div class="input-group">
+                              <input type="text" class="form-control" name="q"
+                                     placeholder="Search for Items"> <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                     </button>
+                             </span>
+                          </div>
+                      </form>
+
+
                   </li>
                 </ul>
               </li>
@@ -178,24 +192,21 @@
 
 
 
-        @if(Route::has('login'))
+        @if(Auth::check())
 
             <li class="menu_item has-children">
                 <a href="#">
+
                     {{Auth::user()->name}}
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="menu_selection">
-                    <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                    <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+
+                    <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </li>
 
-
           @else
-
-
-
 
             <li class="menu_item has-children">
                 <a href="#">
@@ -205,6 +216,7 @@
                 <ul class="menu_selection">
                     <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
                     <li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+
                 </ul>
             </li>
           @endif

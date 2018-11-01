@@ -12,7 +12,8 @@
         "laravel/scout": "^6.0",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "stripe/stripe-php": "^6.19"
+        "stripe/stripe-php": "^6.19",
+        "guzzlehttp/guzzle":"~5.3|~6.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

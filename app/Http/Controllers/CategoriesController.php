@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class CategoriesController extends Controller
@@ -19,10 +20,11 @@ class CategoriesController extends Controller
         if(!Gate::allows('isIndustry')){
             abort(404, "Sorry, You cant do this actions");
         }
-        $categories= Category::all();
+        $user= Auth::user()->id;
+        $categories= Category::all()->where('user_id',$user);
 
 
-        return view('admin.category.index',compact('categories','products'));
+        return view('admin.category.index',compact('categories','user'));
     }
 
     /**
@@ -43,7 +45,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
+        Auth::user()->category()->create($request->all());
         return back();
     }
 

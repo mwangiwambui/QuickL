@@ -59,47 +59,6 @@
                             <td>
                                 {!! Form::select('size', ['small'=>'Small','medium'=>'Medium','large'=>'Large'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
                             </td>
-                                                        <td>
-                                                            <div class="red_buttons " onclick="openForm()" style="width: 200px;"><a href="#" style="font-size:15px;">Contact Industry</a></div>
-                                                            <div class="form-popup" id="myForm">
-                                                                <div class="super_container">
-                                                                    <div class="">
-                                                                        <div class="col-12">
-                                                                            <div class="card">
-                                                                                <div class="card-header">
-                                                                                    <h4 class="card-title">Industry Name</h4>
-                                                                                </div>
-                                                                                <div class="card-content collapse show">
-                                                                                    <div class="card-body">
-
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-7">
-                                                                                                    <h3>{{$cartItem->name}}</h3>
-                                                                                                </div>
-                                                                                                <div class="col-md-5">
-                                                                                                    <input name="qty" type="text" class="form-control" style="width:100px;height:30px;" value="qty">
-                                                                                                </div>
-                                                                                            </div>
-
-                                                                                            <div class="control-group form-group">
-                                                                                                <div class="controls">
-                                                                                                    {{ Form::label('description', 'Message') }}
-                                                                                                    {{ Form::textarea('description', null, array('class' => 'form-control','id'=>'message', 'required' ,'data-validation-required-message'=>'Please enter your message')) }}
-
-                                                                                                </div>
-                                                                                            </div>
-
-                                                                                            <button type="submit" class="btn">Send Inquiry</button>
-                                                                                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
 
                             <td>
                               <button style="float: left" type="submit" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>

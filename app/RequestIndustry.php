@@ -37,11 +37,6 @@ class RequestIndustry extends Model
 
 
 
-
-
-
-
-
 }
 
 

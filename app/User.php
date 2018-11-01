@@ -44,6 +44,15 @@ class User extends Authenticatable
         return $this->hasMany(Product::class);
     }
 
+    public static function industry(){
+        $industry= RequestIndustry::pluck('companyname');
+
+
+    }
+    public function category(){
+        return $this->hasMany(Category::class);
+    }
+
 
 
 
